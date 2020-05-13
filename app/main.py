@@ -35,28 +35,28 @@ def token_required(f):
 def index():
     return render_template('index.html'), 200
 
-@app.route('/spell')
+@app.route('/orakel/spell')
 @token_required
 def get_spell():
     s = SpellGenerator()
     return jsonify({'spell': s.get_lucky_spell()})
 
 
-@app.route('/number')
+@app.route('/orakel/number')
 @token_required
 def get_number():
     s = NumberGenerator()
     return jsonify({'number': s.get_lucky_number()})
 
 
-@app.route('/symbol')
+@app.route('/orakel/symbol')
 @token_required
 def get_symbol():
     s = SymbolGenerator()
     return jsonify({'symbol': s.get_lucky_symbol()})
 
 
-@app.route('/login')
+@app.route('/orakel/login')
 def login():
     auth = request.authorization
 
