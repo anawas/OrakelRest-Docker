@@ -7,6 +7,10 @@
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 
+# ignore virtual environment
+venv
+__pycache__
+
 # Log files
 *.log
 *.http
