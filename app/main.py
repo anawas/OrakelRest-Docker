@@ -12,6 +12,7 @@ application = app = Flask(__name__)
 def index():
     return render_template('index.html'), 200
 
+
 @app.route('/orakel/spell')
 def get_spell():
     s = SpellGenerator()
