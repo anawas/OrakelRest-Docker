@@ -1,7 +1,9 @@
 import random
 
-class NumberGenerator:
-
+# Erzeugt eine Zufallszahl im Bereich [1..20[
+# Todo: Die Zahl mit einem etwas spannenderen Algorithmus erzeugen
+#       Z.B. mit dem Geburtstdatum oder der aktuellen Datum
+class NumberGenerator:gi
     def __init__(self):
         pass
 
@@ -9,6 +11,8 @@ class NumberGenerator:
         return random.randint(1, 20)
 
 
+# Wählt zufällig einen Spruch aus der Liste
+# Todo: Die Sprüche von einem File oder aus einer DB einlesen
 class SpellGenerator:
     def __init__(self):
         self.spells = [
@@ -21,8 +25,9 @@ class SpellGenerator:
         return self.spells[index]
 
 
+# Wählt zufällig ein Symbol aus der Liste
+# Todo: Das Symbol als Bild zurückgeben
 class SymbolGenerator:
-
     def __init__(self):
         self.symbols = [
             "Kleeblatt",
