@@ -3,7 +3,7 @@ import random
 # Erzeugt eine Zufallszahl im Bereich [1..20[
 # Todo: Die Zahl mit einem etwas spannenderen Algorithmus erzeugen
 #       Z.B. mit dem Geburtstdatum oder der aktuellen Datum
-class NumberGenerator:gi
+class NumberGenerator:
     def __init__(self):
         pass
 
