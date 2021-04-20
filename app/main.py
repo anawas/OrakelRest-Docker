@@ -6,6 +6,9 @@ from functools import wraps
 from generators.generators import SpellGenerator, SymbolGenerator, NumberGenerator
 from models.allowed_users import AllowedUsers
 
+import logging
+
+logging.basicConfig(filename="restapi.log", level=logging.INFO)
 
 application = app = Flask(__name__)
 app.config['SECRET_KEY'] = 'cccccckihedfgnrnvtirjenvhtkriienvddrnljfcue'
@@ -78,9 +81,12 @@ def check_user(auth):
     # user = User.query.filter_by(username=auth.username).first()
     all_users = AllowedUsers()
     if all_users.is_allowed_user(auth.username, auth.password):
+        logging.info(f"User {auth.username} logged in")
         return True
+    logging.warning(f"Unauthorized logging attempt of user {auth.username}")
     return False
 
 
 if __name__ == '__main__':
+    logging.info("Starting server")
     app.run(host="0.0.0.0", port=80)
